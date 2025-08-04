@@ -87,14 +87,14 @@ const page = () => {
                     <div className=' w-[70%] m-auto'>
                         <p className=' text-black dark:text-slate-600 text-sm mb-[4px]'>Mobile Number</p>
                         <form className=' font-bold text-2xl mb-[10px] flex items-center'>
-                            <select name="" id="" className=' mr-[2px] text-black dark:text-slate-600'>
+                            <select name="" id="" className=' bg-transparent mr-[2px] text-black dark:text-slate-600'>
                                 <option value="+996">+996</option>
                             </select>
                             <input id="custom-number"
                                 type="text"
                                 inputMode="numeric"
                                 value={value}
-                                onChange={handleChange} placeholder='00 0000 0000' className=' appearance-none focus:outline-none text-black dark:text-slate-600' />
+                                onChange={handleChange} placeholder='00 0000 0000' className='bg-transparent appearance-none focus:outline-none text-black dark:text-slate-600' />
                         </form>
                         {/* {isComplete && (
         <p className="mt-2 text-green-600 font-medium">✅ Input complete!</p>

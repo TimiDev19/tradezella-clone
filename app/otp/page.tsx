@@ -107,7 +107,7 @@ const page = () => {
                                 type="text"
                                 inputMode="numeric"
                                 value={value}
-                                onChange={handleChange} placeholder='_ _ _ _' className=' appearance-none focus:outline-none text-black' />
+                                onChange={handleChange} placeholder='_ _ _ _' className='bg-transparent appearance-none focus:outline-none text-black' />
                         </form>
                         <h1 className=' mb-4 text-sm text-black dark:text-slate-600'>Resend OTP in <span className=' text-[#ab4fa8]'>01:59 sec</span></h1>
 

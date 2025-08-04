@@ -17,11 +17,11 @@ import { IconSun } from '@tabler/icons-react';
 import { IconFile } from '@tabler/icons-react';
 import { IconShield } from '@tabler/icons-react';
 import { IconInfoCircle } from '@tabler/icons-react';
-import ChangeLanguageModal from '@/modals/ChangeLanguageModal'
-import TermsAndConditionsModal from '@/modals/TermsAndConditionsModal'
-import PrivacyPolicyModal from '@/modals/PrivacyPolicyModal'
-import LogoutModal from '@/modals/LogoutModal'
-import DeleteAccountModal from '@/modals/DeleteAccountModal'
+import ChangeLanguageModal from '@/app/modals/ChangeLanguageModal'
+import TermsAndConditionsModal from '@/app/modals/TermsAndConditionsModal'
+import PrivacyPolicyModal from '@/app/modals/PrivacyPolicyModal'
+import LogoutModal from '@/app/modals/LogoutModal'
+import DeleteAccountModal from '@/app/modals/DeleteAccountModal'
 import useDarkMode from '@/hooks/useDarkmode'
 
 const page = () => {
@@ -37,14 +37,15 @@ const page = () => {
     const [logoutModalOpen, setIsLogoutModalOpen] = useState(false)
     const [deleteAccountModalOpen, setIsDeleteAccountModalOpen] = useState(false)
 
+    console.log({ laguageModalOpen })
+
 
 
 
     const length: number = 0
 
     return (
-        <div>
-            <div className=' w-screen h-screen bg-white dark:bg-[#000000] relative flex items-start justify-center'>
+            <div className='bg-white dark:bg-[#000000] relative flex items-start justify-center h-screen w-screen'>
                 <div className=' h-[calc(100vh-150px)] overflow-y-scroll bg-white dark:bg-black w-full z-[25] flex flex-col items-center justify-end'>
                     <div className=' w-[70%] mx-auto h-[90%] text-black dark:text-white rounded-2xl px-[30px]'>
                         <h1 className=' font-extrabold text-4xl mb-[10px]'>Settings</h1>
@@ -195,27 +196,26 @@ const page = () => {
                 </div>
                 <Navbar />
 
+                {
+                    laguageModalOpen && <ChangeLanguageModal setIsLanguageModalOpen={setIsLanguageModalOpen} />
+                }
+
+                {
+                    termsAndConditionsModalOpen && <TermsAndConditionsModal setIsTermsAndConditionsModalOpen={setIsTermsAndConditionsModalOpen} />
+                }
+
+                {
+                    privacyPolicyModalOpen && <PrivacyPolicyModal setIsPrivacyPolicyModalOpen={setIsPrivacyPolicyModalOpen} />
+                }
+
+                {
+                    logoutModalOpen && <LogoutModal setIsLogoutModalOpen={setIsLogoutModalOpen} />
+                }
+
+                {
+                    deleteAccountModalOpen && <DeleteAccountModal setIsDeleteAccountModalOpen={setIsDeleteAccountModalOpen} />
+                }
             </div>
-            {
-                laguageModalOpen && <ChangeLanguageModal setIsLanguageModalOpen={setIsLanguageModalOpen} />
-            }
-
-            {
-                termsAndConditionsModalOpen && <TermsAndConditionsModal setIsTermsAndConditionsModalOpen={setIsTermsAndConditionsModalOpen} />
-            }
-
-            {
-                privacyPolicyModalOpen && <PrivacyPolicyModal setIsPrivacyPolicyModalOpen={setIsPrivacyPolicyModalOpen} />
-            }
-
-            {
-                logoutModalOpen && <LogoutModal setIsLogoutModalOpen={setIsLogoutModalOpen} />
-            }
-
-            {
-                deleteAccountModalOpen && <DeleteAccountModal setIsDeleteAccountModalOpen={setIsDeleteAccountModalOpen} />
-            }
-        </div>
     )
 }
 
