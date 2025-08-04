@@ -35,7 +35,11 @@
 
 import React from 'react';
 
-const TermsAndConditionsModal = ({ setIsTermsAndConditionsModalOpen }) => {
+type TermsAndConditionsModalProps = {
+  setIsTermsAndConditionsModalOpen: (open: boolean) => void;
+};
+
+const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = ({ setIsTermsAndConditionsModalOpen }) => {
   return (
     <div
       className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center"

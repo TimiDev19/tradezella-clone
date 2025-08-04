@@ -1,21 +1,11 @@
 import React from 'react'
 
+type ChangeLanguageModalProps = {
+    setIsLanguageModalOpen: (open: boolean) => void;
+};
 
-const ChangeLanguageModal = ({ setIsLanguageModalOpen }) => {
+const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({ setIsLanguageModalOpen }) => {
     return (
-        //<div
-        //     className='fixed right-0 left-0 top-0 bottom-0 px-2 py-4 overflow-scroll z-50 justify-center items-center flex bg-[#00000080] scrollbar-hide'
-        //     onClick={
-        //         (e) => {
-        //             if (e.target !== e.currentTarget) {
-        //                 return
-        //             }
-        //             setIsLanguageModalOpen(false)
-        //         }
-        //     }
-        // >
-
-        // </div >
         <div
             className="fixed inset-0 bg-black/50 z-50 flex flex-col items-center justify-end"
             onClick={(e) => {

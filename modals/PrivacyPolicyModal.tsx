@@ -1,6 +1,10 @@
 import React from 'react'
 
-const PrivacyPolicyModal = ({setIsPrivacyPolicyModalOpen}) => {
+type PrivacyPolicyModalProps = {
+    setIsPrivacyPolicyModalOpen: (open: boolean) => void;
+};
+
+const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ setIsPrivacyPolicyModalOpen }) => {
     return (
         <div
             className='fixed right-0 left-0 top-0 bottom-0 px-2 py-4 overflow-scroll z-50 flex-col justify-end items-center flex bg-[#00000080] scrollbar-hide'
