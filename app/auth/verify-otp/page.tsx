@@ -13,6 +13,8 @@ import ellipse6 from "@/assets/Ellipse 6.png"
 import logo from "@/assets/logo.png"
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic';
+
 const page = () => {
     const [value, setValue] = useState('');
     const [isComplete, setIsComplete] = useState(false);
