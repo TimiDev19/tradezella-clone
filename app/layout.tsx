@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className}`}
       >
-        <main className=" h-screen w-screen">
+        <main className=" h-[100vh] w-[100vw]">
           {children}
         </main>
       </body>
