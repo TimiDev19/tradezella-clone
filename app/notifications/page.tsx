@@ -1,6 +1,8 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import ellipse from "@/assets/Ellipse 17.png"
 import ellipse1 from "@/assets/Ellipse 16.png"
 import ellipse2 from "@/assets/Ellipse 15.png"
@@ -14,6 +16,15 @@ import Navbar from '@/components/Navbar'
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
 const page = () => {
+    const router = useRouter();
+
+    useEffect(() => {
+        const token = sessionStorage.getItem('authToken');
+        if (!token) {
+            router.replace('/');
+        }
+    }, []);
+    
     const [value, setValue] = useState('');
     const [isComplete, setIsComplete] = useState(false);
     const [validOTP, setValidOTP] = useState(false)
@@ -37,7 +48,7 @@ const page = () => {
     return (
         <div className=' w-screen h-screen bg-[#000000] relative flex items-start justify-center'>
             <div className=' h-[calc(100vh-150px)] bg-[#f6f5f5] dark:bg-black w-full z-[25] flex flex-col items-center justify-end'>
-                <div className=' w-[70%] mx-auto h-[90%] text-black dark:text-white rounded-2xl px-[30px]'>
+                <div className=' w-full lg:w-[70%] mx-auto h-[90%] text-black dark:text-white rounded-2xl px-[30px]'>
                     <h1 className=' font-extrabold text-4xl'>Notifications</h1>
                     <div className=' w-full h-full flex items-center justify-center text-black dark:text-white/60'>
                         {length === 0 && <p>No notifications yet</p>}

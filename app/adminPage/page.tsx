@@ -1,6 +1,8 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import ellipse from "@/assets/Ellipse 17.png"
 import ellipse1 from "@/assets/Ellipse 16.png"
 import ellipse2 from "@/assets/Ellipse 15.png"
@@ -33,6 +35,15 @@ const page = () => {
         setValue(formatted);
     };
 
+    const router = useRouter();
+
+    useEffect(() => {
+        const token = sessionStorage.getItem('authToken');
+        if (!token) {
+            router.replace('/');
+        }
+    }, []);
+
     return (
         <div className=' w-screen h-screen bg-[#000000] relative flex items-start justify-center'>
             <div className=' h-[calc(100vh-150px)] bg-[#f6f5f5] dark:bg-black w-full z-[25] flex flex-col items-center justify-end'>
@@ -42,7 +53,7 @@ const page = () => {
                         placeholder='Send message'
                         className=' w-[90%] h-full focus:outline-none bg-transparent text-black dark:text-white'
                     />
-                    <SendRoundedIcon className=' cursor-pointer'/>
+                    <SendRoundedIcon className=' cursor-pointer' />
                 </div>
             </div>
             <Navbar />
