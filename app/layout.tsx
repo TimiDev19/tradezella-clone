@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AgentX Admin",
+  title: "AgentX",
   description: "AgentX",
 };
 
