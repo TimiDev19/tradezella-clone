@@ -18,20 +18,20 @@ const page = () => {
     const [isComplete, setIsComplete] = useState(false);
     const [validOTP, setValidOTP] = useState(false)
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let input = e.target.value.replace(/\D/g, ''); // Strip non-digits
-        input = input.slice(0, 4); // Max 10 digits
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     let input = e.target.value.replace(/\D/g, ''); // Strip non-digits
+    //     input = input.slice(0, 4); // Max 10 digits
 
-        // Set completion state
-        setIsComplete(input.length === 4);
+    //     // Set completion state
+    //     setIsComplete(input.length === 4);
 
-        // Format: 00 0000 0000
-        let formatted = '';
-        if (input.length > 0) formatted += input.slice(0, 3);
-        if (input.length > 2) formatted += '' + input.slice(3, 4);
+    //     // Format: 00 0000 0000
+    //     let formatted = '';
+    //     if (input.length > 0) formatted += input.slice(0, 3);
+    //     if (input.length > 2) formatted += '' + input.slice(3, 4);
 
-        setValue(formatted);
-    };
+    //     setValue(formatted);
+    // };
 
     //Api integration
     const router = useRouter();
@@ -230,10 +230,10 @@ const page = () => {
                         <div className=' w-full flex items-center justify-between'>
                             {/* {
                                 isComplete ? */}
-                            (<button onClick={handleVerify} className=' w-[49%] text-center bg-black dark:bg-[#AB4FA8] text-white py-[10px] px-[100px] rounded-md hover:bg-black dark:hover:bg-[#AB4FA8]/60 duration-500'>Verify</button>)
-                            {/* : */}
-                            {/* (<button onClick={() => setValidOTP(true)} className=' cursor-pointer w-[49%] text-center bg-[#1B1B1B] text-white/60 py-[10px] px-[100px] rounded-md hover:bg-[#1B1B1B] duration-500'>Verify</button>)
-                            } */}
+                                    (<button onClick={handleVerify} className=' w-[49%] text-center bg-black dark:bg-[#AB4FA8] text-white py-[10px] px-[100px] rounded-md hover:bg-black dark:hover:bg-[#AB4FA8]/60 duration-500'>Verify</button>)
+                            {/* //         :
+                            //         (<button onClick={() => setValidOTP(true)} className=' cursor-pointer w-[49%] text-center bg-blue-500 text-white/60 py-[10px] px-[100px] rounded-md hover:bg-[#1B1B1B] duration-500'>Verify</button>)
+                            // } */}
                             <Link href="/" className=' w-[49%] text-center bg-red-500 text-white py-[10px] px-[100px] rounded-md hover:bg-red-500/60 duration-500'>Cancel</Link>
                         </div>
                     </div>
