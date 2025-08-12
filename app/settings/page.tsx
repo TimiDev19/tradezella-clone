@@ -16,6 +16,10 @@ import PrivacyPolicyModal from '@/app/modals/PrivacyPolicyModal'
 import LogoutModal from '@/app/modals/LogoutModal'
 import DeleteAccountModal from '@/app/modals/DeleteAccountModal'
 import useDarkMode from '@/hooks/useDarkmode'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import i18nConfig from '@/next-i18next.config';
+import { useTranslation } from 'next-i18next';
+
 
 const page = () => {
     const router = useRouter();
@@ -223,3 +227,4 @@ const page = () => {
 }
 
 export default page
+

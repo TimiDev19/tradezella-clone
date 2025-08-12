@@ -1,0 +1,18 @@
+{
+    "title": "Paramètres",
+    "choose_language": "Choisir une langue",
+    "choose_language_desc": "Choisissez la langue préférée",
+    "notifications": "Notifications",
+    "notifications_desc": "Recevez des offres spéciales",
+    "dark_mode": "Mode sombre",
+    "dark_mode_desc": "Activer le mode sombre",
+    "terms": "Conditions générales",
+    "terms_desc": "Voir nos conditions générales",
+    "privacy": "Politique de confidentialité",
+    "privacy_desc": "Voir notre politique de confidentialité",
+    "about": "À propos d'Agent X",
+    "about_desc": "En savoir plus sur Agent X",
+    "delete": "Supprimer le compte",
+    "logout": "Se déconnecter"
+  }
+  

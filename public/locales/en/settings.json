@@ -1,0 +1,18 @@
+{
+    "title": "Settings",
+    "choose_language": "Choose a language",
+    "choose_language_desc": "Choose the preferred language",
+    "notifications": "Notifications",
+    "notifications_desc": "Let us inform you about special offers",
+    "dark_mode": "Dark Mode",
+    "dark_mode_desc": "Enable dark mode",
+    "terms": "Terms & conditions",
+    "terms_desc": "View our terms & conditions",
+    "privacy": "Privacy Policy",
+    "privacy_desc": "View our privacy policy",
+    "about": "About Agent X",
+    "about_desc": "Learn about Agent X",
+    "delete": "Delete Account",
+    "logout": "Log Out"
+  }
+  

@@ -15,6 +15,13 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
+// interface Notifications {
+//     _id: string;
+//     subject: string;
+//     question: string;
+//     updatedAt: string;
+// }
+
 const page = () => {
     const router = useRouter();
 
@@ -24,10 +31,25 @@ const page = () => {
             router.replace('/');
         }
     }, []);
-    
     const [value, setValue] = useState('');
     const [isComplete, setIsComplete] = useState(false);
     const [validOTP, setValidOTP] = useState(false)
+
+    // ------------TO PULL THE NOTIFICATIONS------------ 
+    // const [notifications, setNotifications] = useState<Notifications[]>([]);    
+    // useEffect(() => {
+    //     fetch("https://toa-hephzibah-backend.onrender.com/api/assignment").then(
+    //         response => response.json()
+    //     ).then(
+    //         data => {
+    //             const formattedData = data.map((assignment: any) => ({
+    //                 ...assignment,
+    //             }));
+
+    //             setNotifications(formattedData);
+    //         }
+    //     ).catch((error) => console.error('Error fetching courses:', error));
+    // }, [])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let input = e.target.value.replace(/\D/g, ''); // Strip non-digits

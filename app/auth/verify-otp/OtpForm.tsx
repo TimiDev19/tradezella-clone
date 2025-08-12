@@ -230,11 +230,11 @@ const OtpForm = () => {
                         <div className=' w-full flex items-center justify-between'>
                             {/* {
                                 isComplete ? */}
-                                    (<button onClick={handleVerify} className=' w-[49%] text-center bg-black dark:bg-[#AB4FA8] text-white py-[10px] px-[100px] rounded-md hover:bg-black dark:hover:bg-[#AB4FA8]/60 duration-500'>Verify</button>)
+                                    (<button onClick={handleVerify} className=' w-[99%] text-center bg-black dark:bg-[#AB4FA8] text-white py-[10px] px-[100px] rounded-md hover:bg-black dark:hover:bg-[#AB4FA8]/60 duration-500'>Verify</button>)
                             {/* //         :
                             //         (<button onClick={() => setValidOTP(true)} className=' cursor-pointer w-[49%] text-center bg-blue-500 text-white/60 py-[10px] px-[100px] rounded-md hover:bg-[#1B1B1B] duration-500'>Verify</button>)
                             // } */}
-                            <Link href="/" className=' w-[49%] text-center bg-red-500 text-white py-[10px] px-[100px] rounded-md hover:bg-red-500/60 duration-500'>Cancel</Link>
+                            {/* <Link href="/" className=' w-[49%] text-center bg-red-500 text-white py-[10px] px-[100px] rounded-md hover:bg-red-500/60 duration-500'>Cancel</Link> */}
                         </div>
                     </div>
                 </div>
@@ -269,7 +269,7 @@ const OtpForm = () => {
                     <h1 className=' mb-4 text-[14px] text-black dark:text-slate-600'>Resend OTP in <span className=' text-[#ab4fa8]'>01:59 sec</span></h1>
 
                     <button onClick={handleVerify} className=' mb-[10px] text-[15px] font-bold block w-full text-center bg-black dark:bg-[#AB4FA8] text-white py-[10px] px-[100px] rounded-md hover:bg-black/60 dark:hover:bg-[#AB4FA8]/60 duration-500'>Verify</button>
-                    <Link href="/" className=' w-full mb-[10px] text-[15px] font-bold block text-center bg-red-500 text-white py-[10px] px-[100px] rounded-md hover:bg-red-500/60 duration-500'>Cancel</Link>
+                    {/* <Link href="/" className=' w-full mb-[10px] text-[15px] font-bold block text-center bg-red-500 text-white py-[10px] px-[100px] rounded-md hover:bg-red-500/60 duration-500'>Cancel</Link> */}
                 </div>
             </div>
         </div>
