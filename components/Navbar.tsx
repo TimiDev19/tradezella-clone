@@ -15,7 +15,7 @@ const Navbar = () => {
                     <button onClick={() => setIsAddShowing(false)}><IconX stroke={2} /></button>
                 </div>
             }
-            <div className=' min-h-[80px] w-full lg:w-[95%] lg:py-[35px] lg:px-[15px] rounded-xl mx-auto border-b lg:border lg:border-slate-300 border-b-slate-300 flex items-center justify-between p-[5px]'>
+            <div className=' min-h-[80px] w-full lg:w-[95%] lg:py-[35px] lg:px-[15px] lg:rounded-xl mx-auto border-b lg:border lg:border-slate-300 border-b-slate-300 flex items-center justify-between p-[5px]'>
                 <Link href={"/"} className=' uppercase text-xl lg:text-3xl'>Tradezella</Link>
                 <button className=' lg:hidden'><IconMenu /></button>
 
