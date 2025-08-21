@@ -1,73 +1,42 @@
 "use client"
-import React, { useState } from 'react'
-import ellipse6 from "@/assets/Ellipse 6.png"
+import { IconMenu, IconX } from '@tabler/icons-react'
 import Link from 'next/link'
-import Image from 'next/image'
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import React, { useState } from 'react'
 
 const Navbar = () => {
-    const [agent, setAgent] = useState(true)
-    const [settings, setSettings] = useState(false)
-    const [showSettings, setShowSettings] = useState(true)
-    const [showNotifications, setShowNotifications] = useState(true)
-    const [notifications, setNotificaions] = useState(false)
+    const [isAdShowing, setIsAddShowing] = useState(true)
 
-    const agentLink = () => {
-        setSettings(false)
-        setNotificaions(false)
-        setAgent(true)
-        setShowNotifications(true)
-        setShowSettings(true)
-    }
-
-    const settingsLink = () => {
-        setNotificaions(false)
-        setAgent(false)
-        setSettings(true)
-        setShowNotifications(false)
-    }
-
-    const notificationsLink = () => {
-        setSettings(false)
-        setAgent(false)
-        setNotificaions(true)
-        setShowSettings(false)
-    }
     return (
-        <div className=' h-[100vh] w-[100vw] absolute flex flex-col items-center justify-end z-[20] bg-slate-900/60'>
-            <div className=' h-[150px] w-full bg-[#f6f5f5] dark:bg-black flex items-center justify-center'>
-                <Link
-                    onClick={() => settingsLink()}
-                    href={"/settings"}
-                    className={`p-1 ${showSettings ? 'block' : 'hidden'} ${settings ? `border border-white rounded-full` : `text-[#1B1B1B] border-[#1B1B1B] border rounded-full`} mx-[20px]  w-[60px] h-[60px] hover:h-[70px] flex items-center justify-center hover:w-[70px] duration-700`}
-                >
-                    <SettingsOutlinedIcon
-                        fontSize="large"
-                    />
-                </Link>
+        <div className=' w-full fixed z-50 max-h-[150px]'>
+            {
+                isAdShowing &&
+                <div className=' w-full flex items-center justify-between text-white bg-blue-950 min-h-[70px] p-2 lg:mb-4'>
+                    <h1 className=' text-[15px] font-bold text-center lg:w-[95%]'>Backtesting 2.0 is now live on TradeZella 🚀. Check it out here!</h1>
+                    <button onClick={() => setIsAddShowing(false)}><IconX stroke={2} /></button>
+                </div>
+            }
+            <div className=' min-h-[80px] w-full lg:w-[95%] lg:py-[35px] lg:px-[15px] rounded-xl mx-auto border-b lg:border lg:border-slate-300 border-b-slate-300 flex items-center justify-between p-[5px]'>
+                <Link href={"/"} className=' uppercase text-xl lg:text-3xl'>Tradezella</Link>
+                <button className=' lg:hidden'><IconMenu /></button>
 
-                <Link
-                    onClick={() => agentLink()}
-                    href={"/adminPage"}
-                    className={`p-1 ${agent && `border border-black dark:border-white rounded-full`} mx-[20px]`}
-                >
-                    <Image
-                        src={ellipse6}
-                        alt=''
-                        className={` w-[60px] hover:w-[70px] duration-700`}
-                    />
-                </Link>
+                <div className=' hidden lg:block'>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Features</Link>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Supported Brokers</Link>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Discord</Link>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Pricing</Link>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Resources</Link>
+                </div>
 
-                <Link
-                    onClick={() => notificationsLink()}
-                    href={"/notifications"}
-                    className={`p-1 ${showNotifications ? 'block' : 'hidden'} ${notifications ? `border border-white rounded-full` : `text-[#1B1B1B] border-[#1B1B1B] border rounded-full`} mx-[20px]  w-[60px] h-[60px] hover:h-[70px] flex items-center justify-center hover:w-[70px] duration-700`}
-                >
-                    <NotificationsNoneOutlinedIcon
-                        fontSize="large"
-                    />
-                </Link>
+                <div className=' hidden lg:flex items-center justify-center'>
+                    <Link href={""} className=' mr-[30px] text-xl p-2 hover:bg-slate-200 duration-500 rounded-md'>Log In</Link>
+
+                    <Link
+                        href={""}
+                        className=' w-[150px] block text-center rounded-lg text-white font-semibold py-[15px] bg-gradient-to-r from-purple-700 to-pink-600'
+                    >
+                        Get Started &gt;
+                    </Link>
+                </div>
             </div>
         </div>
     )
