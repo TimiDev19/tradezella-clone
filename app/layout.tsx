@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AgentX",
-  description: "AgentX",
+  title: "TradezellaClone",
+  description: "Tradezella",
 };
 
 export default function RootLayout({
